@@ -23,6 +23,16 @@
   ```
 7. gg!
 
+### Backup Database
+`dokku mysql:clone <mysql-name> <mysql-backup>`
+
+### Updading BookStack
+1. Backup Database
+  `dokku mysql:clone <mysql-name> <mysql-backup>`
+2. Change version number in Dockerfile
+  `BOOKSTACK_VERSION=<bookstack-version-number> \`
+3. Commit and Push changes to dokku
+
 #### Using S3 to storage images and files:
 Set to app follow envs:
 ```
