@@ -25,23 +25,23 @@
 
 ### Mount Persistent Storage
 1. Creat two direcories `.../storage` and `.../uploads` on the dokku host machine
-2. Mount the two volumes
-  `dokku storage:mount <app-name> <storage-dir>:/var/www/bookstack/public/storage`
+2. Mount the two volumes:  
+  `dokku storage:mount <app-name> <storage-dir>:/var/www/bookstack/public/storage`  
   `dokku storage:mount <app-name> <uploads-dir>:/var/www/bookstack/public/uploads`
-3. Restart the application
+3. Restart the application:  
   `dokku ps:restart <app-name>`
 
 ### Backup Database
 `dokku mysql:clone <mysql-name> <mysql-backup>`
 
 ### Updading BookStack
-1. Backup Database
+1. Backup Database:  
   `dokku mysql:clone <mysql-name> <mysql-backup>`
-2. Change version number in Dockerfile
+2. Change version number in Dockerfile:  
   `BOOKSTACK_VERSION=<bookstack-version-number> \`
 3. Commit and Push changes to dokku
 
-#### Using S3 to storage images and files:
+### Using S3 to storage images and files:
 Set to app follow envs:
 ```
 STORAGE_TYPE="s3"
