@@ -23,6 +23,14 @@
   ```
 7. gg!
 
+### Mount Persistent Storage
+1. Creat two direcories `.../storage` and `.../uploads` on the dokku host machine
+2. Mount the two volumes
+  `dokku storage:mount <app-name> <storage-dir>:/var/www/bookstack/public/storage`
+  `dokku storage:mount <app-name> <uploads-dir>:/var/www/bookstack/public/uploads`
+3. Restart the application
+  `dokku ps:restart <app-name>`
+
 ### Backup Database
 `dokku mysql:clone <mysql-name> <mysql-backup>`
 
